@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     width: 100vw;
     height: 100vh;
@@ -19,4 +23,94 @@ h1 {
 h1 + p {
     font-size: 1.7rem;
     margin-bottom: 30px;
+}
+
+.form {
+    align-self: center;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: auto;
+    bottom: auto;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #787778bb;
+}
+
+form > h1 {
+    font-size: 50px;
+    text-align: center;
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 20px;
+    width: 400px;
+    height: 440px;
+}
+
+.input {
+    padding: px 0px 40px;
+    width: 400px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 25px;
+    align-items: center;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 15%;
+    width: 100%;
+}
+
+.submit button, .library button {
+    background-color: #3B82F6;
+    padding: 10px 20px;
+    font-size: 1.3rem;
+    color: aliceblue;
+    border-radius: 20px;    
+}
+
+input[type="text"], [type="tel"] {
+    width: 300px;
+    height: 32px;
+    border-radius: 30px;
+    border: none;
+    background-color: #78777833;
+    padding: 20px;
+    font-size: 1.3rem;
+}
+
+[type="checkbox"] {
+    height: 32px;
+    width: 30px;
+}
+
+.input label {
+    font-size: 1.3rem;
+}
+
+.input div:last-child {
+    display: flex;
+    align-items: center;
+}
+
+.library button {
+    align-self: flex-start;
+    width: 130px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 5px;
 }
