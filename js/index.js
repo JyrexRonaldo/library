@@ -1,16 +1,13 @@
 const tableBody = document.querySelector("tbody");
-const newBook = document.querySelector(".library button");
+const newBook = document.querySelector(".library .newBook");
 const bookForm = document.querySelector(".form");
 const formButton = document.querySelector(".submit button");
 const bookTitle = document.querySelector("input[name='title']");
 const bookAuthor = document.querySelector("input[name='author']");
 const bookPages = document.querySelector("input[name='pages']");
 const bookRead = document.querySelector("input[name='read']");
+let removeButton = document.querySelectorAll("td>button");
 let myLibrary = [];
-
-addBookToLibrary("Titan", "Eren", 90, "read");
-addBookToLibrary("Titan", "Eren", 90, "read");
-addBookToLibrary(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.value);
 
 newBook.addEventListener("click", () => {
     bookForm.style.display = "flex";
@@ -18,7 +15,7 @@ newBook.addEventListener("click", () => {
 
 formButton.addEventListener("click", function() {
     tableBody.innerHTML = "";
-    addBookToLibrary(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.value);
+    addBookToLibrary(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.checked);
     bookForm.style.display = "none";
     displayBook();
 });
@@ -33,22 +30,32 @@ function Book(title, author, pages, read) {
 function addBookToLibrary(title, author, pages, read) {
   const book = new Book(title, author, pages, read);
   myLibrary.push(book);
-  console.log("Hello")
 }
-
-
 
 function displayBook() {
   for (let i = 0; i < myLibrary.length; i++) {
-    tableBody.innerHTML += `<tr>
+    tableBody.innerHTML += `<tr data-index=${i}>
         <td>${myLibrary[i].title}</td>
         <td>${myLibrary[i].author}</td>
         <td>${myLibrary[i].pages}</td>
         <td>${myLibrary[i].read}</td>
+        <td><button data-index=${i}>Remove</button></td>
                                 </tr>`;
+    removeButton = document.querySelectorAll("td>button");    
+    console.log(tableBody);
+
+    removeButton.forEach(button => button.addEventListener('click', function(e) {
+  const index = e.target.getAttribute("data-index");
+  console.log(index);
+  myLibrary.splice(index, 1);
+  console.log(document.querySelector(`tbody > tr:nth-child(${Number(index) + 1})`));
+  tableBody.removeChild(document.querySelector(`tbody > tr[data-index="${index}"]`))
+}));
   }
 }
 
 displayBook();
 
-console.log(bookRead.value);
+
+
+

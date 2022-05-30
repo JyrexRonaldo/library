@@ -72,7 +72,7 @@ form {
     width: 100%;
 }
 
-.submit button, .library button {
+.submit button, .newBook {
     background-color: #3B82F6;
     padding: 10px 20px;
     font-size: 1.3rem;
@@ -80,7 +80,7 @@ form {
     border-radius: 20px;    
 }
 
-input[type="text"], [type="tel"] {
+input[type="text"], [type="number"] {
     width: 300px;
     height: 32px;
     border-radius: 30px;
