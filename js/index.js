@@ -6,8 +6,17 @@ const bookTitle = document.querySelector("input[name='title']");
 const bookAuthor = document.querySelector("input[name='author']");
 const bookPages = document.querySelector("input[name='pages']");
 const bookRead = document.querySelector("input[name='read']");
+const formElement = document.querySelector("form");
 let removeButton = document.querySelectorAll("button[data-index]");
 let myLibrary = [];
+
+formElement.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+
+bookForm.addEventListener("click", function(e) {
+    bookForm.style.display = "none";
+});
 
 newBook.addEventListener("click", () => {
   bookForm.style.display = "flex";
