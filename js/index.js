@@ -6,6 +6,7 @@ const titleInput = document.querySelector("input[name=title]");
 const authorInput = document.querySelector("input[name=author]");
 const pagesInput = document.querySelector("input[name=pages]");
 const readStatusInput = document.querySelector("input[name=read]");
+const formCloseBtn = document.querySelector(".dialog-div > div")
 
 const myLibrary = [
 new Book("The Hobbit", "J.R.R Tolkien", 295, true),
@@ -94,4 +95,8 @@ formButton.addEventListener("click", (e) => {
     pagesInput.value = "";
     readStatusInput.checked = null;
     displayBook()
+})
+
+formCloseBtn.addEventListener("click", () => {
+    dialogBox.close()
 })
