@@ -7,9 +7,23 @@ const authorInput = document.querySelector("input[name=author]");
 const pagesInput = document.querySelector("input[name=pages]");
 const readStatusInput = document.querySelector("input[name=read]");
 
-console.log(titleInput)
-
-const myLibrary = []; 
+const myLibrary = [
+new Book("The Hobbit", "J.R.R Tolkien", 295, true),
+new Book("The Hobbit", "J.R.R Tolkien", 295, false),
+new Book("The Hobbit", "J.R.R Tolkien", 295, true),
+new Book("The Hobbit", "J.R.R Tolkien", 295, true),
+new Book("The Hobbit", "J.R.R Tolkien", 295, false),
+new Book("The Hobbit", "J.R.R Tolkien", 295, true),
+new Book("The Hobbit", "J.R.R Tolkien", 295, true),
+new Book("The Hobbit", "J.R.R Tolkien", 295, false),
+new Book("The Hobbit", "J.R.R Tolkien", 295, true),
+new Book("The Hobbit", "J.R.R Tolkien", 295, true),
+new Book("The Hobbit", "J.R.R Tolkien", 295, false),
+new Book("The Hobbit", "J.R.R Tolkien", 295, true),
+new Book("The Hobbit", "J.R.R Tolkien", 295, true),
+new Book("The Hobbit", "J.R.R Tolkien", 295, false),
+new Book("The Hobbit", "J.R.R Tolkien", 295, true)
+]; 
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -75,10 +89,9 @@ newBookBtn.addEventListener("click", () => {
 
 formButton.addEventListener("click", (e) => {
     addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, readStatusInput.checked)
-    console.log(readStatusInput.checked)
-    titleInput.value = ""
-    authorInput.value = ""
-    pagesInput.value = ""
+    titleInput.value = "";
+    authorInput.value = "";
+    pagesInput.value = "";
     readStatusInput.checked = null;
     displayBook()
 })
