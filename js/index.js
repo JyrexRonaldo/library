@@ -9,21 +9,7 @@ const readStatusInput = document.querySelector("input[name=read]");
 
 console.log(titleInput)
 
-const myLibrary = [
-new Book("The dfgbobt", "J.R.R Tolkien", 295, true),
-new Book("The gdgbbit", "J.R.R Tolkien", 295, false),
-new Book("The qweqwbit", "J.R.R Tolkien", 295, true),
-new Book("The Hobt", "J.R.R Tolkien", 295, true),
-new Book("The bqweqt", "J.R.R Tolkien", 295, false),
-new Book("The st", "J.R.R Tolkien", 295, true),
-new Book("The qet", "J.R.R Tolkien", 295, true),
-new Book("The 1eqww1wdoqbbit", "J.R.R Tolkien", 295, false),
-new Book("The qweot", "J.R.R Tolkien", 295, true),
-new Book("The asdast", "J.R.R Tolkien", 295, true),
-new Book("The q323t", "J.R.R Tolkien", 295, false),
-new Book("The sdfit", "J.R.R Tolkien", 295, true),
-new Book("The Hsdft", "J.R.R Tolkien", 295, false)
-]; 
+const myLibrary = []; 
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -59,14 +45,25 @@ function displayBook() {
         bookLibrary.append(bookItem)
         
         readBtn.textContent = book.read ? "read" : "not read";
+        readBtn.setAttribute("data-index", index);
         deletebtn.textContent = "Delete";
-        deletebtn.setAttribute("data-index", index)
+        deletebtn.setAttribute("data-index", index);
 
         deletebtn.addEventListener("click", (e) => {
             let bookIndex = e.target.getAttribute("data-index");
             myLibrary.splice(bookIndex, 1);
             displayBook()
-        })
+        });
+
+        readBtn.addEventListener("click", (e) => {
+            let bookIndex = e.target.getAttribute("data-index");
+            if (myLibrary[bookIndex].read) {
+                myLibrary[bookIndex].read = false;
+            } else {
+                myLibrary[bookIndex].read = true;
+            }
+            displayBook()
+        });
     });
 }
 
