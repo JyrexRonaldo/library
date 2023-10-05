@@ -1,13 +1,19 @@
 const dialogBox = document.querySelector("dialog");
 const newBookBtn = document.querySelector(".new-book");
 const bookLibrary = document.querySelector("tbody");
-const formButton = document.querySelector("form button")
+const formButton = document.querySelector("form button");
+const titleInput = document.querySelector("input[name=title]");
+const authorInput = document.querySelector("input[name=author]");
+const pagesInput = document.querySelector("input[name=pages]");
+const readStatusInput = document.querySelector("input[name=read]");
 
+console.log(titleInput)
 
-const myLibrary = [new Book("The Hobbit", "J.R.R Tolkien", 295, true),
-new Book("The Hobbit", "J.R.R Tolkien", 295, false),
-new Book("The Hobbit", "J.R.R Tolkien", 295, true),
-new Book("The Hobbit", "J.R.R Tolkien", 295, false)
+const myLibrary = [
+// new Book("The Hobbit", "J.R.R Tolkien", 295, true),
+// new Book("The Hobbit", "J.R.R Tolkien", 295, false),
+// new Book("The Hobbit", "J.R.R Tolkien", 295, true),
+// new Book("The Hobbit", "J.R.R Tolkien", 295, false)
 ]; 
 
 function Book(title, author, pages, read) {
@@ -17,11 +23,13 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
-function addBookToLibrary(book) {
-    myLibrary.push(book)
+function addBookToLibrary(title, author, pages, read) {
+    const newbook = new Book(title, author, pages, read)
+    myLibrary.push(newbook)
 }
 
 function displayBook() {
+    bookLibrary.innerHTML = "";
     myLibrary.forEach((book) => {
         const title = document.createElement("td");
         const author = document.createElement("td");
@@ -53,5 +61,11 @@ newBookBtn.addEventListener("click", () => {
 });
 
 formButton.addEventListener("click", (e) => {
-    console.log("yeah");
+    addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, readStatusInput.checked)
+    console.log(readStatusInput.checked)
+    titleInput.value = ""
+    authorInput.value = ""
+    pagesInput.value = ""
+    readStatusInput.checked = null;
+    displayBook()
 })

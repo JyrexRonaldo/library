@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/index.js" defer></script>
     <title>Library</title>
@@ -11,16 +12,18 @@
 
 <body>
     <dialog>
-        <p>Add new book</p>
-        <form method="dialog">
-            <input placeholder="Title" type="text" name="read">
-            <input placeholder="Author" type="text" name="author">
-            <input placeholder="Pages" type="tel" name="pages">
-            <label>Have you read it?
-                <input type="checkbox" name="read" id="">
-            </label>
-            <button>Submit</button>
-        </form>
+        <div class="dialog-div">
+            <p>Add new book</p>
+            <form method="dialog">
+                <input placeholder="Title" type="text" name="title">
+                <input placeholder="Author" type="text" name="author">
+                <input placeholder="Pages" type="tel" name="pages">
+                <label for="read">Have you read it?
+                    <input type="checkbox" name="read" id="read">
+                </label>
+                <button>Submit</button>
+            </form>
+        </div>
     </dialog>
     <div>
         <button class="new-book">New Book</button>
