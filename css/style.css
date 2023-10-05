@@ -79,3 +79,7 @@ tbody {
     align-self: flex-end;
     cursor: pointer;
 }
+
+th, td {
+    width: 130px;
+}
