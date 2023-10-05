@@ -10,10 +10,19 @@ const readStatusInput = document.querySelector("input[name=read]");
 console.log(titleInput)
 
 const myLibrary = [
-// new Book("The Hobbit", "J.R.R Tolkien", 295, true),
-// new Book("The Hobbit", "J.R.R Tolkien", 295, false),
-// new Book("The Hobbit", "J.R.R Tolkien", 295, true),
-// new Book("The Hobbit", "J.R.R Tolkien", 295, false)
+new Book("The dfgbobt", "J.R.R Tolkien", 295, true),
+new Book("The gdgbbit", "J.R.R Tolkien", 295, false),
+new Book("The qweqwbit", "J.R.R Tolkien", 295, true),
+new Book("The Hobt", "J.R.R Tolkien", 295, true),
+new Book("The bqweqt", "J.R.R Tolkien", 295, false),
+new Book("The st", "J.R.R Tolkien", 295, true),
+new Book("The qet", "J.R.R Tolkien", 295, true),
+new Book("The 1eqww1wdoqbbit", "J.R.R Tolkien", 295, false),
+new Book("The qweot", "J.R.R Tolkien", 295, true),
+new Book("The asdast", "J.R.R Tolkien", 295, true),
+new Book("The q323t", "J.R.R Tolkien", 295, false),
+new Book("The sdfit", "J.R.R Tolkien", 295, true),
+new Book("The Hsdft", "J.R.R Tolkien", 295, false)
 ]; 
 
 function Book(title, author, pages, read) {
@@ -30,7 +39,7 @@ function addBookToLibrary(title, author, pages, read) {
 
 function displayBook() {
     bookLibrary.innerHTML = "";
-    myLibrary.forEach((book) => {
+    myLibrary.forEach((book, index) => {
         const title = document.createElement("td");
         const author = document.createElement("td");
         const pages = document.createElement("td");
@@ -49,8 +58,15 @@ function displayBook() {
         bookItem.append(title, author, pages, readStatus, deleteCell);
         bookLibrary.append(bookItem)
         
-        deletebtn.textContent = "Delete";
         readBtn.textContent = book.read ? "read" : "not read";
+        deletebtn.textContent = "Delete";
+        deletebtn.setAttribute("data-index", index)
+
+        deletebtn.addEventListener("click", (e) => {
+            let bookIndex = e.target.getAttribute("data-index");
+            myLibrary.splice(bookIndex, 1);
+            displayBook()
+        })
     });
 }
 
