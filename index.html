@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +8,39 @@
     <script src="./js/index.js" defer></script>
     <title>Library</title>
 </head>
+
 <body>
-    <div><table>
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Pages</th>
-                <th>Status</th>
-                <th>Removal</th>
-            </tr>
-        </thead>
-        <tbody>
-            
-        </tbody>
-    </table></div>
+    <dialog>
+        <p>Add new book</p>
+        <form method="dialog">
+            <input placeholder="Title" type="text" name="read">
+            <input placeholder="Author" type="text" name="author">
+            <input placeholder="Pages" type="tel" name="pages">
+            <label>Have you read it?
+                <input type="checkbox" name="read" id="">
+            </label>
+            <button>Submit</button>
+        </form>
+    </dialog>
+    <div>
+        <button class="new-book">New Book</button>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Pages</th>
+                    <th>Status</th>
+                    <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
 </body>
+
 </html>
