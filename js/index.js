@@ -8,6 +8,15 @@ const pagesInput = document.querySelector("input[name=pages]");
 const readStatusInput = document.querySelector("input[name=read]");
 const formCloseBtn = document.querySelector(".dialog-div > div")
 
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+}
+
 const myLibrary = [
 new Book("The Hobbit", "J.R.R Tolkien", 295, true),
 new Book("The Hobbit", "J.R.R Tolkien", 295, false),
@@ -25,13 +34,6 @@ new Book("The Hobbit", "J.R.R Tolkien", 295, true),
 new Book("The Hobbit", "J.R.R Tolkien", 295, false),
 new Book("The Hobbit", "J.R.R Tolkien", 295, true)
 ]; 
-
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-}
 
 function addBookToLibrary(title, author, pages, read) {
     const newbook = new Book(title, author, pages, read)
