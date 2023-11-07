@@ -28,8 +28,8 @@ body > div {
     background-color: rgb(0, 0, 0, 0.5);
     color: white;
     padding: 40px 80px;
-    width: 55vw;
-    height: 90vh;
+    width: 950px;
+    height: 850px;
     gap: 10px;
 }
 
@@ -99,6 +99,8 @@ tbody {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    overflow-y: auto;
+    height: 575px;
 }
 
 .dialog-div > div {

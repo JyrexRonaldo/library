@@ -17,6 +17,16 @@ new Book("The Hobbit", "J.R.R Tolkien", 295, false),
 new Book("The Hobbit", "J.R.R Tolkien", 295, true),
 new Book("The Hobbit", "J.R.R Tolkien", 295, true),
 new Book("The Hobbit", "J.R.R Tolkien", 295, false),
+new Book("The Hobbit", "J.R.R Tolkien", 295, true),
+new Book("The Hobbit", "J.R.R Tolkien", 295, true),
+new Book("The Hobbit", "J.R.R Tolkien", 295, false),
+new Book("The Hobbit", "J.R.R Tolkien", 295, true),
+new Book("The Hobbit", "J.R.R Tolkien", 295, true),
+new Book("The Hobbit", "J.R.R Tolkien", 295, false),
+
+new Book("The Hobbit", "J.R.R Tolkien", 295, true),
+new Book("The Hobbit", "J.R.R Tolkien", 295, true),
+new Book("The Hobbit", "J.R.R Tolkien", 295, false),
 new Book("The Hobbit", "J.R.R Tolkien", 295, true)
 ]; 
 
